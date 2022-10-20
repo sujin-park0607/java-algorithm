@@ -30,6 +30,9 @@ public class Stack02 {
     public Integer[] getArr() {
         return arr;
     }
+    public boolean isEmpty() {
+        return (this.idx == -1) ? true: false;
+    }
 
     public int peek() {
         if(this.isEmpty()){
@@ -38,7 +41,4 @@ public class Stack02 {
         return this.arr[this.idx];
     }
 
-    public boolean isEmpty() {
-        return (this.idx == -1) ? true: false;
-    }
 }
