@@ -53,13 +53,11 @@ class Stack02Test {
     @DisplayName("isEmpty 테스트")
     void isEmpty(){
         Stack02 st = new Stack02();
+        assertTrue(st.isEmpty());
         st.push(10);
-        st.push(20);
-
         assertFalse(st.isEmpty());
         st.pop();
-        st.pop();
-        assertTrue(st.isEmpty());
+
     }
 
     @Test
