@@ -5,6 +5,7 @@ build/
 !**/src/test/**/build/
 
 ### IntelliJ IDEA ###
+.idea
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
@@ -53,3 +54,9 @@ bin/
 !/gradlew.bat
 
 !/settings.gradle
+/build.gradle
+/gradlew
+/gradlew.bat
+/settings.gradle
+/gradle/wrapper/gradle-wrapper.properties
+/gradle/wrapper/gradle-wrapper.jar
