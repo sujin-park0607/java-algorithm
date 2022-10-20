@@ -25,4 +25,8 @@ public class Stack02 {
     public Integer[] getArr() {
         return arr;
     }
+
+    public int peek() {
+        return this.arr[this.idx];
+    }
 }

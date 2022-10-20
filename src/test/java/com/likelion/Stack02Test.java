@@ -8,16 +8,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Stack02Test {
+
+    Stack02 st = new Stack02();
+
     @BeforeEach
     void setup(){
-
+        st.push(10);
+        st.push(20);
     }
     @Test
     @DisplayName("push가 잘 되는지")
     void push(){
-        Stack02 st = new Stack02();
-        st.push(10);
-        st.push(20);
 
         Integer[] arr = st.getArr();
         //10, 20
@@ -28,9 +29,6 @@ class Stack02Test {
     @Test
     @DisplayName("push가 잘 되는지 pop이 잘 되는지")
     void pushAndPop(){
-        Stack02 st = new Stack02();
-        st.push(10);
-        st.push(20);
 
         Assertions.assertEquals(20, st.pop());
         Assertions.assertEquals(10, st.pop());
@@ -41,11 +39,8 @@ class Stack02Test {
 
     @Test
     @DisplayName("peek 테스트")
-    void peekTest(){
-        Stack01 st = new Stack01();
-        st.push(10);
-        st.push(20);
-
+    void peekTest(){;
+        Assertions.assertEquals(20,st.peek());
         Assertions.assertEquals(20,st.peek());
     }
 
