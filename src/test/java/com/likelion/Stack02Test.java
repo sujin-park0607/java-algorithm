@@ -9,16 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Stack02Test {
 
-    Stack02 st = new Stack02();
 
     @BeforeEach
     void setup(){
-        st.push(10);
-        st.push(20);
     }
     @Test
     @DisplayName("push가 잘 되는지")
     void push(){
+        Stack02 st = new Stack02();
+        st.push(10);
+        st.push(20);
 
         Integer[] arr = st.getArr();
         //10, 20
@@ -29,19 +29,43 @@ class Stack02Test {
     @Test
     @DisplayName("push가 잘 되는지 pop이 잘 되는지")
     void pushAndPop(){
+        Stack02 st = new Stack02();
+        st.push(10);
+        st.push(20);
 
-        Assertions.assertEquals(20, st.pop());
-        Assertions.assertEquals(10, st.pop());
+        assertEquals(20, st.pop());
+        assertEquals(10, st.pop());
 
-//        st.push(30);
-//        Assertions.assertEquals(30, st.pop());
     }
 
     @Test
     @DisplayName("peek 테스트")
-    void peekTest(){;
-        Assertions.assertEquals(20,st.peek());
-        Assertions.assertEquals(20,st.peek());
+    void peekTest(){
+        Stack02 st = new Stack02();
+        st.push(10);
+        st.push(20);
+
+        assertEquals(20,st.peek());
+        assertEquals(20,st.peek());
     }
+
+    @Test
+    @DisplayName("isEmpty 테스트")
+    void isEmpty(){
+        Stack02 st = new Stack02();
+        st.push(10);
+        st.push(20);
+
+        assertFalse(st.isEmpty());
+        st.pop();
+        st.pop();
+        assertTrue(st.isEmpty());
+    }
+
+    @Test
+    void realStack(){
+
+    }
+
 
 }
