@@ -12,11 +12,21 @@ public class Stack01 {
     }
 
     public void push(int value){
-        this.pointer += 1;
+        this.pointer ++;
         this.arr[this.pointer] = value;
+    }
+
+    public int pop(){
+        int value = this.arr[this.pointer];
+        this.pointer --;
+        return value;
     }
 
     public int[] getArr(){
         return arr;
+    }
+
+    public int peek() {
+        return this.arr[this.pointer];
     }
 }
