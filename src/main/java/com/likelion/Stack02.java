@@ -30,6 +30,8 @@ public class Stack02 {
     public Integer[] getArr() {
         return arr;
     }
+
+
     public boolean isEmpty() {
         return (this.idx == -1) ? true: false;
     }

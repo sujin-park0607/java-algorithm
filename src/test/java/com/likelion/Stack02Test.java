@@ -48,10 +48,14 @@ class Stack02Test {
     @DisplayName("peek 테스트")
     void peekTest(){
         Stack02 st = new Stack02();
-        st.push(10);
-        st.push(20);
 
-        assertEquals(20,st.peek());
+        assertThrows(EmptyStackException.class, ()->
+                st.pop());
+
+        st.push(20);
+//        st.push(20);
+
+//        assertEquals(20,st.peek());
         assertEquals(20,st.peek());
 
 
