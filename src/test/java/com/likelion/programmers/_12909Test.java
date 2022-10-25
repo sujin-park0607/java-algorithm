@@ -24,6 +24,12 @@ class _12909Test {
 
         boolean result4 = solution.solution("(()(");
         assertFalse( result4);
+
+        boolean result5 = solution.solution("{}()[](({))");
+        assertFalse( result5);
+
+        boolean result6 = solution.solution("{}()[](({}))");
+        assertTrue( result6);
     }
 
 }
