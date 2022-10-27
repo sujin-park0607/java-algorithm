@@ -1,30 +1,40 @@
 package com.likelion.programmers;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class _42576 {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
-        Map<String, Integer> memo = new HashMap<>();
-        for (int i = 0; i < participant.length; i++) {
-            String key = participant[i];
-            memo.put(key, 1);
-        }
-        for (int i = 0; i < completion.length; i++) {
-            String key = completion[i]; // value 1
-            memo.put(key, 0);
-        }
-        for (String key : memo.keySet()) {
-            if (memo.get(key) == 1) {
-                return key;
+
+        //배열 두개 합쳐진 하나의 배열 만들기
+        String[] arr = Stream
+                .concat(Arrays.stream(participant), Arrays.stream(completion))
+                .toArray(String[]::new);
+
+        //해쉬 생성
+        HashMap<String,Integer> map = new HashMap<>();
+
+        //dicionary 초기화 ,  key는 이름, value는 이름이  나온 횟수
+        for (String name : arr) {
+            if(map.containsKey(name)){
+                map.put(name,map.get(name) + 1);
+            }else{
+                map.put(name,1);
             }
         }
-    return answer;
+
+        //2로 나누어 나머지가 있으면 return
+        for( Map.Entry<String, Integer> elem : map.entrySet() ){
+            if(elem.getValue() % 2 != 0){
+                return elem.getKey();
+            }
+        }
+        return answer;
     }
 
     public static void main(String[] args) {
-        _42576Finish S = new _42576Finish();
+        _42576 S = new _42576();
         String name = S.solution(new String[]{"leo", "kiki", "eden"}, new String[]{"eden", "kiki"});
         System.out.println(name);
     }
