@@ -15,6 +15,7 @@ public class _42576 {
         //해쉬 생성
         HashMap<String,Integer> map = new HashMap<>();
 
+        //dicionary 초기화 ,  key는 이름, value는 이름이  나온 횟수
         for (String name : arr) {
             if(map.containsKey(name)){
                 map.put(name,map.get(name) + 1);
@@ -23,6 +24,7 @@ public class _42576 {
             }
         }
 
+        //2로 나누어 나머지가 있으면 return
         for( Map.Entry<String, Integer> elem : map.entrySet() ){
             if(elem.getValue() % 2 != 0){
                 return elem.getKey();
