@@ -10,7 +10,6 @@ public class HashTable {
 
     public HashTable() {
     }
-
     public HashTable(int size) {
         this.size = size;
         this.table = new int[size];
