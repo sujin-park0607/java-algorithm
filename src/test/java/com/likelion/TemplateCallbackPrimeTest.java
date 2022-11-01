@@ -1,6 +1,5 @@
 package com.likelion;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +16,7 @@ class TemplateCallbackPrimeTest {
 
         for(int n : number){
             boolean r = tcp.isPrime(n, (a,b) -> a*a<b);
-            Assertions.assertTrue(r);
+            assertEquals(true, r);
         }
     }
 
@@ -35,7 +34,7 @@ class TemplateCallbackPrimeTest {
                     return a * a< b;
                 }
             });
-            Assertions.assertTrue(r);
+            assertTrue(r);
         }
     }
 

@@ -1,7 +1,5 @@
 package com.likelion;
 
-import java.sql.Statement;
-
 public class TemplateCallbackPrime {
     interface Strategy{
         boolean compare(int a, int b);
@@ -14,6 +12,4 @@ public class TemplateCallbackPrime {
         }
         return true;
     }
-
-
 }
