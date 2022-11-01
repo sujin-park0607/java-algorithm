@@ -18,21 +18,4 @@ public class TemplateCallbackPrime {
         return true;
     }
 
-    public static void main(String[] args) {
-        int[] number = {13, 17, 19, 23};
-
-        TemplateCallbackPrime tcp = new TemplateCallbackPrime();
-
-        for (int n : number) {
-            boolean r = tcp.isPrime(n, new Strategy() {
-                @Override
-                public boolean compare(int a, int b) {
-                    return a < b/2;
-                }
-            });
-            System.out.println(r);
-        }
-    }
-
-
 }
