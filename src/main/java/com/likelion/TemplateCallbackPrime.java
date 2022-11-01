@@ -7,9 +7,6 @@ public class TemplateCallbackPrime {
         boolean compare(int a, int b);
     }
 
-    boolean someOperation(int a, int b){
-        return a < b;
-    }
 
     boolean isPrime(int num, Strategy stmt){
         for(int i=2; stmt.compare(i, num); i++){
@@ -17,5 +14,6 @@ public class TemplateCallbackPrime {
         }
         return true;
     }
+
 
 }
