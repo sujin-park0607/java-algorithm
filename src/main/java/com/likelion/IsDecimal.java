@@ -1,6 +1,6 @@
 package com.likelion;
 
-public class isMinority {
+public class IsDecimal {
     public boolean solution1(int num){
         for(int i=2; i<num; i++){
             if(num%i == 0){
@@ -19,12 +19,21 @@ public class isMinority {
         return true;
     }
 
+    public boolean solution3(int num){
+        for(int i=2; i<Math.sqrt(num); i++){
+            if(num%i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
-        isMinority minority = new isMinority();
+        IsDecimal isDecimal= new IsDecimal();
         int[] number = {13, 17, 19, 23};
 
         for (int num : number) {
-            System.out.println(minority.solution2(num));
+            System.out.println(isDecimal.solution3(num));
         }
     }
 
