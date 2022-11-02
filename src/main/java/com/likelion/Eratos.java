@@ -10,16 +10,14 @@ public class Eratos {
         for(int i=0; i<18; i++) numArr.add(i);
 
 
-        int num = 2;
-        for(int i=0; i<numArr.size(); i++){
-            if(numArr.get(i) !=num && numArr.get(i) %num == 0){
-                System.out.println("num: "+num+"/i: "+i);
-                numArr.remove(i);
+        for(int num=2; num<7; num++){
+            for(int i=0; i<numArr.size(); i++){
+                if(numArr.get(i) !=num && numArr.get(i) %num == 0){
+                    numArr.remove(i);
+                }
             }
             System.out.println(numArr.size());
+            System.out.println(numArr);
         }
-
     }
-
-
 }
