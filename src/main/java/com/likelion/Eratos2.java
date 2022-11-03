@@ -1,6 +1,8 @@
 package com.likelion;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Eratos2 {
     public static void main(String[] args) {
@@ -18,13 +20,15 @@ public class Eratos2 {
         for(int i=2; i<nums.length; i+=2){
             checks[i] = false;
         }
-        System.out.println(Arrays.toString(nums));
-        System.out.println(Arrays.toString(checks));
 
+        int cnt = 0;
         for(int i=0; i<nums.length; i++){
             if(checks[i]){
-                System.out.println(nums[i]);
+                System.out.printf("%d|", nums[i]);
+                cnt ++;
             }
         }
+        System.out.println();
+        System.out.println("size:"+ cnt);
     }
 }
