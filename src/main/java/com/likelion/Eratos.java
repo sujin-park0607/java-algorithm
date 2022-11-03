@@ -19,18 +19,18 @@ public class Eratos {
         for (int i = 2; i * i <= n; i++) {
             for (int j = 0; j < numArr.size(); j++) {
                 System.out.println("numArr.get(j): "+numArr.get(j));
-                System.out.println("checks[j - 2]: "+checks[j - 2]);
+                System.out.println("checks[j - 2]: "+checks[i - 2]);
 
-                if (numArr.get(j) > i && numArr.get(j) % i == 0 && checks[j - 2] == true) {
-                    checks[numArr.get(j - 2)] = false;
+                if (numArr.get(j) > i && numArr.get(j) % i == 0 && checks[i - 2] == true) {
+                    checks[numArr.get(i - 2)] = false;
                 }
             }
         }
         for (int i = 0; i < n; i++) {
             System.out.println(checks[i]);
             System.out.println(numArr.get(i));
-            if (checks[i] == true) {
-                System.out.printf("%d ", numArr.get(i+2));
+            if (checks[i] == false) {
+                System.out.printf("%d ", numArr.get(i));
 //            }
             }
         }
