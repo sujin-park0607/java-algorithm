@@ -27,10 +27,9 @@ public class Eratos {
             }
         }
         for (int i = 0; i < n-2; i++) {
-//            System.out.println(checks[i]);
-//            System.out.println(numArr.get(i));
             if (checks[i] == true) {
-                System.out.printf("%d ", numArr.get(i));
+                System.out.println(checks[i]);
+                System.out.println(numArr.get(i));
 //            }
             }
         }
