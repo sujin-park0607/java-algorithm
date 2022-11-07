@@ -15,9 +15,8 @@ public class _12910 {
                 answer.add(num);
             }
         }
-        if(answer.size() == 0){
-            answer.add(-1);
-        }
+        if(answer.size() == 0) answer.add(-1);
+
         Collections.sort(answer);
         answer.stream().mapToInt(i->i).toArray();
         System.out.println(answer);
