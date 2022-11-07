@@ -1,7 +1,5 @@
 package com.likelion;
 
-import java.util.Scanner;
-
 public class Harshard {
     //자릿수를 더하는 함수
     public int sumOfDigit(int number){
@@ -20,13 +18,11 @@ public class Harshard {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         Harshard hs = new Harshard();
+        int x = 135;
 
-        int number = sc.nextInt();
-
-        int sum = hs.sumOfDigit(number);
-        System.out.println(hs.isHarshard(number,sum));
+        int sum = hs.sumOfDigit(x);
+        System.out.println(hs.isHarshard(x,sum));
     }
 
 }
