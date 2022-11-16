@@ -1,5 +1,8 @@
 package com.likelion;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class QuickSort2 {
     public int standard(int[] arr){
         return arr.length/2;
@@ -16,12 +19,15 @@ public class QuickSort2 {
 
         while(arr[left] < arr[pivot]) left ++;
         while(arr[right] > arr[pivot]) right --;
-        int temp = arr[right];
-        arr[right] = arr[left];
-        arr[left] = temp;
+        if(left <= right){
+            int temp = arr[right];
+            arr[right] = arr[left];
+            arr[left] = temp;
+            left ++;
+            right --;
+        }
 
-        System.out.println(arr[left]);
-        System.out.println(arr[right]);
+        System.out.println(Arrays.toString(arr));
 
     }
 }
