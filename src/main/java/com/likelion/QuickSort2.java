@@ -12,10 +12,13 @@ public class QuickSort2 {
         int pivot = quickSort.standard(arr);
 
         int left = 0;
-        int right = arr.length;
+        int right = arr.length-1;
 
-        while(arr[left] < arr[pivot]){
-            left ++;
+        while(left <= right){
+            if(arr[left] < arr[pivot]){
+                left ++;
+            }else if(arr[right] > arr[pivot])
+                right --;
         }
         System.out.println(arr[left]);
 
