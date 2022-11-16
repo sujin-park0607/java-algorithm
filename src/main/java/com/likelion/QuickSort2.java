@@ -14,13 +14,19 @@ public class QuickSort2 {
         int left = 0;
         int right = arr.length-1;
 
-        while(left <= right){
+        while(arr[left] <= arr[right]){
             if(arr[left] < arr[pivot]){
                 left ++;
-            }else if(arr[right] > arr[pivot])
+            }else if(arr[right] > arr[pivot]){
                 right --;
+            }
         }
+        int temp = arr[right];
+        arr[right] = arr[left];
+        arr[left] = temp;
+
         System.out.println(arr[left]);
+        System.out.println(arr[right]);
 
     }
 }
