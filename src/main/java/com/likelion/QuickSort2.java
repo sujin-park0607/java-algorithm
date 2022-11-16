@@ -15,12 +15,9 @@ public class QuickSort2 {
         int right = arr.length;
 
         while(left <= right){
-            if(arr[left] > arr[right]){
-                int temp = arr[left];
-                arr[left] = arr[right];
-                arr[right] = temp;
+            if(arr[left] < arr[pivot]){
+                left ++;
             }
-
         }
 
         System.out.println(arr[pivot]);
