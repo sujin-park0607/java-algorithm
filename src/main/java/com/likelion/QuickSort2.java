@@ -4,11 +4,10 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class QuickSort2 {
-    public int[] sort(int[] arr, int left, int right) {
-        if (arr.length <= 0){
-            return arr;
-        }
-        int pivot = arr.length / 2;
+    public int[] sort(int[] arr, int startIdx, int endIdx) {
+        int left = startIdx;
+        int right = endIdx;
+        int pivot = (startIdx+endIdx) / 2;
         while (arr[left] < arr[pivot]) left++;
         while (arr[right] > arr[pivot]) right--;
         if (left <= right) {
@@ -18,13 +17,12 @@ public class QuickSort2 {
             left++;
             right--;
         }
-        int[] leftArr = IntStream.range(0, right)
-                .map(i-> arr[i]).toArray();
-        sort(leftArr, 0, right);
 
-        int[] rightArr = IntStream.range(left, arr.length-1)
-                .map(i-> arr[i]).toArray();
-        sort(rightArr, left, arr.length-1);
+        System.out.printf("leftIdx: %d / rightIdx: %d\n", left, right);
+        if(startIdx < right) sort(arr, startIdx, right);
+        if(left < endIdx) sort(arr, left, endIdx);
+
+        return arr;
     }
 
     public static void main(String[] args) {
@@ -35,14 +33,6 @@ public class QuickSort2 {
         int right = arr.length - 1;
 
         quickSort.sort(arr, left, right);
-        if (left <= right) {
-            int temp = arr[right];
-            arr[right] = arr[left];
-            arr[left] = temp;
-            left++;
-            right--;
-        }
-
         System.out.println(Arrays.toString(arr));
 
     }
