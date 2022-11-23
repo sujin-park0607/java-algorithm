@@ -1,20 +1,19 @@
 package com.likelion.recursion;
 
+import java.util.Scanner;
+
 public class Print1To100 {
 
-    public static void print1To100(int n, int sum){
-        int[] arr = {7, 3, 2, 9};
+    public static void print1To100(int num, int n){
+        if(n > num) return;
+        print1To100(num, n+1);
+        System.out.println(n);
 
-        if(n > arr.length-1){
-            System.out.println(sum);
-            return;
-        }
-
-        print1To100(n+1, sum + arr[n]);
     }
 
     public static void main(String[] args) {
-
-        print1To100(0, 0);
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        print1To100(num, 1);
     }
 }
