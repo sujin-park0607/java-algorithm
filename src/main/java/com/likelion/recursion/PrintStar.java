@@ -1,4 +1,4 @@
-package com.likelion;
+package com.likelion.recursion;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.likelion;
+package com.likelion.recursion;
 
 public class Print1To100 {
 
