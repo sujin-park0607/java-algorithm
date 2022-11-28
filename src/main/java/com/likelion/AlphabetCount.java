@@ -1,6 +1,6 @@
 package com.likelion;
 
-public class alphabetCount {
+public class AlphabetCount {
     public static void alphabet(){
         for(int i=65; i<=90; i++){
             System.out.println((char)i);
