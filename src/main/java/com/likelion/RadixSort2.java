@@ -1,8 +1,6 @@
 package com.likelion;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class RadixSort2 {
     public static int[] digit(int[] numbers){
@@ -22,6 +20,21 @@ public class RadixSort2 {
         }
         Arrays.sort(answer);
         return answer;
+    }
+
+    public int[] sort(int[] arr){
+        Queue<Integer>[] queueArr = new Queue[10];
+        for(int i=0; i<queueArr.length; i++){
+            queueArr[i] = new ArrayDeque<>();
+        }
+
+        for(int i=0; i<arr.length; i++){
+
+            int digit = (int) Math.pow(10,0);
+            queueArr[Math.floorDiv(i, digit) % 10].add(i);
+        }
+
+        return new int[10];
     }
 
     public static int[] radixSort(int arr[]){
