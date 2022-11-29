@@ -5,16 +5,23 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class RadixSort2 {
-    public static Set<Integer> digit(int[] numbers){
-        Set<Integer> digitArr = new HashSet<>();
+    public static int[] digit(int[] numbers){
+        Set<Integer> digitSet = new HashSet<>();
         for (int number : numbers) {
             if (number==0){
-                digitArr.add(1);
+                digitSet.add(1);
             }else{
-                digitArr.add((int)(Math.log10(number)+1));
+                digitSet.add((int)(Math.log10(number)+1));
             }
         }
-        return digitArr;
+
+        int[] answer = new int[digitSet.size()];
+        int idx = 0;
+        for (Integer set : digitSet) {
+            answer[idx++] = set;
+        }
+        Arrays.sort(answer);
+        return answer;
     }
 
     public static int[] radixSort(int arr[]){
