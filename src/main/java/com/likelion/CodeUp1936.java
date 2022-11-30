@@ -1,5 +1,7 @@
 package com.likelion;
 
+import java.util.Scanner;
+
 public class CodeUp1936 {
     public static int tree(int a, int b){
         if(a==b) {
@@ -12,6 +14,8 @@ public class CodeUp1936 {
     }
 
     public static void main(String[] args) {
-        System.out.println(tree(3,4));
+        Scanner sc = new Scanner(System.in);
+        String[] nums = sc.nextLine().split(" ");
+        System.out.println(tree(Integer.parseInt(nums[0]),Integer.parseInt(nums[1])));
     }
 }
