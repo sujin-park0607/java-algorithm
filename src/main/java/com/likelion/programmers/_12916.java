@@ -9,7 +9,6 @@ public class _12916 {
         for (String s : inputArr) {
             if(s.equals("p") || s.equals("P")) result++;
             else if (s.equals("y") || s.equals("Y")) result --;
-            else continue;
         }
 
         if(result==0) return true;
