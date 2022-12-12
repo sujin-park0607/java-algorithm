@@ -15,6 +15,8 @@ public class DpMinCost {
                     dp[i][j] = dp[i][j-1] + arr[i][j];
                 }else if(i>0 && j==0){
                     dp[i][j] = dp[i-1][j] + arr[i][j];
+                }else{
+                    dp[i][j] = Math.min(Math.min(dp[i-1][j],dp[i][j-1]), dp[i-1][j-1]) + arr[i][j];
                 }
             }
             System.out.println(Arrays.toString(dp[i]));
