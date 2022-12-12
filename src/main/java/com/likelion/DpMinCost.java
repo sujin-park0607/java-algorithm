@@ -13,6 +13,8 @@ public class DpMinCost {
                     dp[i][j] = arr[i][j];
                 }else if(i == 0 && j>0){
                     dp[i][j] = dp[i][j-1] + arr[i][j];
+                }else if(i>0 && j==0){
+                    dp[i][j] = dp[i-1][j] + arr[i][j];
                 }
             }
             System.out.println(Arrays.toString(dp[i]));
