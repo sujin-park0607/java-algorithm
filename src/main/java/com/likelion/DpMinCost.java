@@ -1,8 +1,14 @@
 package com.likelion;
 
 public class DpMinCost {
-    int M = 3;
-    int N = 3;
+    public static void getMinCost(int[][] arr){
 
-    int[][] matrix = {{1, 3, 2}, {4, 6, 2}, {1, 2, 4}};
+        int[][] dp = new int[arr.length][arr.length];
+    }
+
+    public static void main(String[] args) {
+        int[][] arr = {{1, 3, 2}, {4, 6, 2}, {1, 2, 4}};
+        getMinCost(arr);
+    }
+
 }
