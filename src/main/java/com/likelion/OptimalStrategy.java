@@ -1,5 +1,7 @@
 package com.likelion;
 
+import java.util.Arrays;
+
 class Pair{
     int left;
     int right;
@@ -31,11 +33,17 @@ public class OptimalStrategy {
 
         //coin이 두개 있는 경우
         for (int i=0; i<coins.length-1; i++){
-            dp[i][i+1] = new Pair(coins[i],coins[i+1]);
+            int left = Math.max(coins[i], coins[i+1]);
+            int right = Math.min(coins[i], coins[i+1]);
+
+            dp[i][i+1] = new Pair(left,right);
         }
 
-        for(int i=0; i<coins.length-1; i++){
-            System.out.println(dp[i][i+1].toString());
+        for(int i=0; i<dp.length-1; i++) {
+            for (int j = 0; j < dp.length-1; j++) {
+                System.out.printf(" (%s) ",dp[i][j].toString());
+            }
+            System.out.println();
         }
     }
 
