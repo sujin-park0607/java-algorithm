@@ -29,8 +29,13 @@ public class OptimalStrategy {
             dp[i][i] = new Pair(coins[i],0);
         }
 
-        for(int i=0; i<coins.length; i++){
-            System.out.println(dp[i][i].toString());
+        //coin이 두개 있는 경우
+        for (int i=0; i<coins.length-1; i++){
+            dp[i][i+1] = new Pair(coins[i],coins[i+1]);
+        }
+
+        for(int i=0; i<coins.length-1; i++){
+            System.out.println(dp[i][i+1].toString());
         }
     }
 
