@@ -9,12 +9,13 @@ public class SumUntil {
 
         //coin이 하나만 있는 경우
         //2 or 7 or 20 or 19
-        int i = 0;
-        for(int j=0; i<coins.length; j++){
-            if(j==0){
-                dp[i][j] = coins[0];
-            }else{
-                dp[i][j] = dp[i][j-1] + coins[j];
+        for(int i=0; i<coins.length; i++){
+            for(int j=i; i<coins.length; j++){
+                if(j==0){
+                    dp[i][j] = coins[i];
+                }else{
+                    dp[i][j] = dp[i][j-1] + coins[j];
+                }
             }
             System.out.println(Arrays.toString(dp[i]));
         }
