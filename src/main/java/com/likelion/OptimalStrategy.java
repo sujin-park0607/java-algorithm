@@ -38,6 +38,8 @@ public class OptimalStrategy {
 
             dp[i][i+1] = new Pair(left,right);
         }
+
+
 //
 //        for(int i=0; i<dp.length-1; i++) {
 //            for (int j = 0; j < dp.length-1; j++) {
